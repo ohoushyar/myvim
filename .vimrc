@@ -1,16 +1,22 @@
-" Maintainer:	Bram Moolenaar <Bram@vim.org>
-" Last change:	2006 Aug 12
-"
-" To use it, copy it to
-"     for Unix and OS/2:  ~/.vimrc
-"	      for Amiga:  s:.vimrc
-"  for MS-DOS and Win32:  $VIM\_vimrc
-"	    for OpenVMS:  sys$login:.vimrc
+version 7.0
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
+" Stolen from Carlos ;)
+set runtimepath+=~/.vim/_myplugins/vim-fugitive
+set runtimepath+=~/.vim/_myplugins/vimproc
+let g:vimproc_dll_path = "/root/.vim/_myplugins/vimproc/autoload/proc.so"
+set runtimepath+=~/.vim/_myplugins/vimshell
+nmap <C-W>e :new \| VimShell bash<CR>
+nmap <C-W>E :vnew \| VimShell bash<CR>
+set runtimepath+=~/.vim/_myplugins/l9
+set runtimepath+=~/.vim/_myplugins/fuzzyfinder
+set runtimepath+=~/.vim/_myplugins/simplefold
+
+"set tags=./tags,tags,/home/website/tags
+"let Tlist_Ctags_Cmd = "cd /home/website && /usr/bin/ctags -R /home/website/{cgi,lib,api}"
+"let Tlist_WinWidth = 40
+"map <F4> :TlistToggle<cr>
+set tags=tags;/
+command! Ctags !cd /home/git && ctags -R
 
 " Use Vim settings, rather then Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -24,38 +30,58 @@ if has("vms")
 else
   set backup		" keep a backup file
 endif
-set history=50		" keep 50 lines of command line history
-set ruler		" show the cursor position all the time
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+" set tw=72
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
+set ai
+set hid
+set showcmd
+set incsearch
+set vb
+set scrolloff=5
+set cursorline
+set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ [CHR=%b/0x%B]\ [POS=%04l,%03c(%03v)]\ [%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
+set laststatus=2
 
-" Don't use Ex mode, use Q for formatting
-map Q gq
-
-" In an xterm the mouse should work quite well, thus enable it.
-" set mouse=a
-" set mouse-=a " To disable
-
-" This is an alternative that also works in block mode, but the deleted
-" text is lost and it only works for putting the current register.
-"vnoremap p "_dp
-
-if &term =~ "xterm"
-  " Fix number of colors for xterm
- " set t_Co=256
-
-  hi CursorLine term=NONE cterm=bold ctermbg=8
-endif
+let perl_fold=1
+let perl_nofold_packages=1
+let c_no_comment_fold=1
+let perl_include_pod=1
+let g:omni_sql_no_default_maps=1
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
 if &t_Co > 2 || has("gui_running")
   syntax on
+  colorscheme darkblue
   set hlsearch
+  set cursorline
 endif
+
+" Fix number of colors for xterm
+if &term =~ "xterm" && &t_Co == 8
+  set t_Co=16
+  hi CursorLine term=NONE cterm=bold ctermbg=8
+  hi Folded ctermbg=8 ctermfg=14
+  hi FoldColumn ctermbg=8 ctermfg=14
+  hi Visual term=NONE cterm=bold ctermbg=10 ctermfg=8
+  hi Search term=reverse cterm=bold ctermbg=11 ctermfg=0
+endif
+
+set bs=2
+set ignorecase
+set showmatch
+set cindent " set smartindent
+set smarttab
+set expandtab
+set ruler
+set shiftwidth=4
+set ls=2
+set errorformat=\"../../%f\"\\,%*[^0-9]%l:\ %m
+set ch=2
+set wrap
+nmap ' :cn
+nmap <F1> <Esc>
+imap <F1> <Esc>
 
 
 
@@ -105,7 +131,6 @@ endif " has("autocmd")
 source ~/.vim/autoload/abbr.vim
 
 set number
-colorscheme darkblue
 
 set tabstop=4    "An indentation level every four columns"
 set expandtab    "Convert all tabs typed into spaces"
