@@ -163,3 +163,15 @@ function! ToggleMouse()
     endif
 endfunction
 
+map <Leader>t :FufBuffer<CR>
+map <C-t> :FufCoverageFile<CR>
+
+map <Leader>gs :Gstatus<CR>
+map <Leader>gc :Gcommit<CR>
+map <Leader>gm :Gcommit --amend<CR>
+map <Leader>gl :Git log<CR>
+map <Leader>gb :Gblame<CR>
+map <Leader>gdd :Git diff<CR>
+map <Leader>gdf :Gdiff<CR>
+map <Leader>gg :Git 
+
