@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/git/bom/lib/BOM'
-let g:netrw_dirhist_2='/home/git/setupscripts/config'
-let g:netrw_dirhist_3='/home/git/bom/cgi/subs/config/sql/bomdb'
-let g:netrw_dirhist_4='/home/git/bom/lib/BOM/Model/Payment'
-let g:netrw_dirhist_5='/home/git/bom/lib/BOM/Model'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/git/bom/lib'
+let g:netrw_dirhist_2='/home/git/bom/lib/Utility'
+let g:netrw_dirhist_3='/home/git/bom/lib'
+let g:netrw_dirhist_4='/home/git/bom/lib/BOM'
+let g:netrw_dirhist_5='/home/git/bom/lib/BOM/Persistence'
+let g:netrw_dirhist_6='/home/git/bom/lib/BOM/Persistence/Rose'
+let g:netrw_dirhist_7='/home/git/bom/lib/BOM/Persistence/Rose/EnvoyTransfer'

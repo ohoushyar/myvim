@@ -174,4 +174,5 @@ map <Leader>gb :Gblame<CR>
 map <Leader>gdd :Git diff<CR>
 map <Leader>gdf :Gdiff<CR>
 map <Leader>gg :Git 
+map <Leader>rw :!perl -Icgi -Icgi/oop -Ilib cgi/w.pl<CR>
 
