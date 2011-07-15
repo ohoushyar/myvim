@@ -175,4 +175,11 @@ map <Leader>gdd :Git diff<CR>
 map <Leader>gdf :Gdiff<CR>
 map <Leader>gg :Git 
 map <Leader>rw :!perl -Icgi -Icgi/oop -Ilib cgi/w.pl<CR>
+map <Leader>srun :!su nobody -c 'perl -Icgi -Icgi/oop -Ilib %'<CR>
+map <Leader>rdw :!perl -d -Icgi -Icgi/oop -Ilib cgi/w.pl<CR>
+map <Leader>rd :!perl -d -Icgi -Icgi/oop -Ilib %<CR>
+map <Leader>srd :!su nobody -c 'perl -d -Icgi -Icgi/oop -Ilib %'<CR>
+map <Leader>prv :!prove -v %<CR>
+map <Leader>sc :!perl -c -Icgi -Icgi/oop -Ilib %<CR>
+map <Leader>ar :!/etc/init.d/rmg_apache restart<CR>
 
