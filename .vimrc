@@ -11,6 +11,7 @@ set runtimepath+=~/.vim/_myplugins/l9
 set runtimepath+=~/.vim/_myplugins/fuzzyfinder
 set runtimepath+=~/.vim/_myplugins/simplefold
 set runtimepath+=~/.vim/_myplugins/ack
+set runtimepath+=~/.vim/_myplugins/scratch
 
 "set tags=./tags,tags,/home/website/tags
 "let Tlist_Ctags_Cmd = "cd /home/website && /usr/bin/ctags -R /home/website/{cgi,lib,api}"
