@@ -139,6 +139,9 @@ set expandtab    "Convert all tabs typed into spaces"
 set shiftwidth=4 "Indent/outdent by four columns"
 set shiftround   "Always indent.outdent to the nearest tabstop"
 
+set list                        "enable viewing tabs
+set listchars=tab:>-,trail:-    "make it nicer
+
 " set textwidth=80 "Use 80 column lines
 
 let Grep_Default_Filelist = '*.pm *.pl *.cgi *.css *.js *.html *.t *.tt *.sql'
