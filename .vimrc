@@ -1,7 +1,7 @@
 version 7.0
 
 " Stolen from Carlos ;)
-set runtimepath+=~/.vim/_myplugins/vim-fugitive
+set runtimepath+=~/.vim/_myplugins/fugitive
 set runtimepath+=~/.vim/_myplugins/vimproc
 let g:vimproc_dll_path = "/root/.vim/_myplugins/vimproc/autoload/proc.so"
 set runtimepath+=~/.vim/_myplugins/vimshell
