@@ -40,7 +40,7 @@ set showcmd
 set incsearch
 set vb
 set scrolloff=5
-set cursorline
+"set cursorline
 set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ [CHR=%b/0x%B]\ [POS=%04l,%03c(%03v)]\ [%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 set laststatus=2
 
@@ -56,13 +56,13 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   colorscheme darkblue
   set hlsearch
-  set cursorline
+"  set cursorline
 endif
 
 " Fix number of colors for xterm
 if &term =~ "xterm" && &t_Co == 8
   set t_Co=16
-  hi CursorLine term=NONE cterm=bold ctermbg=8
+"  hi CursorLine term=NONE cterm=bold ctermbg=8
   hi Folded ctermbg=8 ctermfg=14
   hi FoldColumn ctermbg=8 ctermfg=14
   hi Visual term=NONE cterm=bold ctermbg=10 ctermfg=8
@@ -168,6 +168,17 @@ function! ToggleMouse()
     endif
 endfunction
 
+map <Leader>l :call ToggleList()<CR>
+function! ToggleList()
+    if &list
+        set nolist
+        echo "List is disabled"
+    else
+        set list
+        echo "List is enabled"
+    endif
+endfunction
+
 map <Leader>t :FufBuffer<CR>
 map <C-t> :FufCoverageFile<CR>
 
@@ -179,12 +190,9 @@ map <Leader>gb :Gblame<CR>
 map <Leader>gdd :Git diff<CR>
 map <Leader>gdf :Gdiff<CR>
 map <Leader>gg :Git 
-map <Leader>rw :!perl -Icgi -Icgi/oop -Ilib cgi/w.pl<CR>
-map <Leader>srun :!su nobody -c 'perl -Icgi -Icgi/oop -Ilib %'<CR>
-map <Leader>rdw :!perl -d -Icgi -Icgi/oop -Ilib cgi/w.pl<CR>
-map <Leader>rd :!perl -d -Icgi -Icgi/oop -Ilib %<CR>
-map <Leader>srd :!su nobody -c 'perl -d -Icgi -Icgi/oop -Ilib %'<CR>
+map <Leader>r :!perl %<CR>
+map <Leader>rd :!perl -d %<CR>
 map <Leader>prv :!prove -v %<CR>
-map <Leader>sc :!perl -c -Icgi -Icgi/oop -Ilib %<CR>
-map <Leader>ar :!/etc/init.d/rmg_apache restart<CR>
+map <Leader>sc :!perl -c %<CR>
+map <Leader>a :Ack <C-r><C-w>
 
