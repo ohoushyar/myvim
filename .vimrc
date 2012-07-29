@@ -195,4 +195,3 @@ map <Leader>rd :!perl -d %<CR>
 map <Leader>prv :!prove -v %<CR>
 map <Leader>sc :!perl -c %<CR>
 map <Leader>a :Ack <C-r><C-w>
-map <Leader>f :!find . -iname <C-r><C-w>*
