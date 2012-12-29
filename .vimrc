@@ -195,6 +195,7 @@ map <Leader>rd :!perl -d %<CR>
 map <Leader>prv :!prove -v %<CR>
 map <Leader>sc :!perl -c %<CR>
 map <Leader>a :Ack <C-r><C-w>
+map <Leader>rp :%s/<C-r><C-w>//gc
 
 vmap <Leader>f :! $HOME/myvim/_myplugins/perl_postfix_toggle/postfix_toggle.pl<CR>
 
