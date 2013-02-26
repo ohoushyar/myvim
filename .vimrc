@@ -168,6 +168,17 @@ function! ToggleMouse()
     endif
 endfunction
 
+map<Leader>n :call ToggleNumber()<CR>
+function! ToggleNumber()
+    if &number
+        set nonumber
+        echo "Number is disabled"
+    else
+        set number
+        echo "Number is enabled"
+    endif
+endfunction
+
 map <Leader>l :call ToggleList()<CR>
 function! ToggleList()
     if &list
