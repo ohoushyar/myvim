@@ -190,6 +190,18 @@ function! ToggleList()
     endif
 endfunction
 
+let g:gitgrepprg="git\\ grep\\ -n"
+function! GitGrep(args)
+    let grepprg_bak=&grepprg
+    exec "set grepprg=" . g:gitgrepprg
+    execute "silent! grep " . a:args
+    botright copen
+    let &grepprg=grepprg_bak
+    exec "redraw!"
+endfunction
+command! -nargs=* -complete=file GitGrep call GitGrep(<q-args>)
+map <Leader>gg :GitGrep <C-r><C-w>
+
 map <Leader>t :FufBuffer<CR>
 map <C-t> :FufCoverageFile<CR>
 
@@ -200,7 +212,6 @@ map <Leader>gl :Git log<CR>
 map <Leader>gb :Gblame<CR>
 map <Leader>gdd :Git diff<CR>
 map <Leader>gdf :Gdiff<CR>
-map <Leader>gg :Git 
 map <Leader>r :!perl %<CR>
 map <Leader>rd :!perl -d %<CR>
 map <Leader>prv :!prove -v %<CR>
