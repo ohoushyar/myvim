@@ -221,3 +221,5 @@ map <Leader>rp :%s/<C-r><C-w>//gc
 
 vmap ,f :! $HOME/myvim/_myplugins/perl_postfix_toggle/postfix_toggle.pl<CR>
 
+" courtesy Bart Lantz: coderwall
+cmap w!! %!sudo tee > /dev/null %
