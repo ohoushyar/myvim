@@ -219,6 +219,9 @@ map <Leader>sc :!perl -c %<CR>
 map <Leader>a :Ack <C-r><C-w>
 map <Leader>rp :%s/<C-r>0//gc
 
+" save
+map <C-s> <esc>:w<CR>
+
 vmap ,f :! $HOME/myvim/_myplugins/perl_postfix_toggle/postfix_toggle.pl<CR>
 
 " courtesy Bart Lantz: coderwall
