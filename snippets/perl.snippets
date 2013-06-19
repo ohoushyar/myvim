@@ -1,6 +1,6 @@
 # #!/usr/bin/perl
 snippet #!
-	#!/usr/bin/perl
+	#!/usr/bin/env perl
 
 # Hash Pointer
 snippet .
@@ -95,3 +95,12 @@ snippet cl
 snippet slurp
 	my $${1:var};
 	{ local $/ = undef; local *FILE; open FILE, "<${2:file}"; $$1 = <FILE>; close FILE }${3}
+# Strict
+snippet strwar
+	use strict;
+	use warnings;
+	${1}
+# feature
+snippet feature
+	use feature qw( say ${1:});
+	${2}
