@@ -219,6 +219,11 @@ map <Leader>sc :!perl -c %<CR>
 map <Leader>a :Ack <C-r><C-w>
 map <Leader>rp :%s/<C-r>0//gc
 
+" Perl module opener
+map <Leader>omv y<C-w>np0ie lib/<esc>A.pm<esc>:%s/::/\//g<CR>:noh<CR>v$y:bd!<CR>:<C-r>0<CR>
+map <Leader>om T<Space>vt;<Leader>omv
+map <Leader>oms T<Space>vt<Space><Leader>omv
+
 " save
 map <C-s> <esc>:w<CR>
 
