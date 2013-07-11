@@ -228,6 +228,8 @@ map <Leader>oms 0f<Space>eT<Space>vt<Space><Leader>omv
 map <C-s> <esc>:w<CR>
 
 vmap ,f :! $HOME/myvim/_myplugins/perl_postfix_toggle/postfix_toggle.pl<CR>
+noremap ,t  :!prove -lv --merge -It/tests %<CR>
+noremap ,T  :!prove -lv --merge t/run.t<CR>
 
 " courtesy Bart Lantz: coderwall
 cmap w!! %!sudo tee > /dev/null %
