@@ -1,22 +1,17 @@
 version 7.0
 
-" Stolen from Carlos ;)
-set runtimepath+=~/.vim/_myplugins/fugitive
-set runtimepath+=~/.vim/_myplugins/vimproc
-let g:vimproc_dll_path = "/root/.vim/_myplugins/vimproc/autoload/proc.so"
-set runtimepath+=~/.vim/_myplugins/vimshell
-nmap <C-W>e :new \| VimShell bash<CR>
-nmap <C-W>E :vnew \| VimShell bash<CR>
-set runtimepath+=~/.vim/_myplugins/l9
-set runtimepath+=~/.vim/_myplugins/fuzzyfinder
-set runtimepath+=~/.vim/_myplugins/simplefold
-set runtimepath+=~/.vim/_myplugins/ack
-set runtimepath+=~/.vim/_myplugins/scratch
+set runtimepath+=$HOME/.vim/vundle
+call vundle#rc()
+
+Bundle 'fugitive.vim'
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'ack.vim'
+Bundle 'simplefold'
+Bundle 'taglist.vim'
+Bundle 'tComment'
 
 "set tags=./tags,tags,/home/website/tags
-"let Tlist_Ctags_Cmd = "cd /home/website && /usr/bin/ctags -R /home/website/{cgi,lib,api}"
-"let Tlist_WinWidth = 40
-"map <F4> :TlistToggle<cr>
 set tags=tags;/
 command! Ctags !cd /home/git && ctags -R
 
