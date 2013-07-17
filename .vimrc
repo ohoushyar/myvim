@@ -11,13 +11,15 @@ call vundle#rc()
 " Vundle requirement
 Bundle 'gmarik/vundle'
 
-Bundle 'fugitive.vim'
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'ack.vim'
 Bundle 'simplefold'
 Bundle 'taglist.vim'
 Bundle 'tComment'
+Bundle 'fugitive.vim'
+"Doesn't really work with Fugitive. Disable for now!
+"Bundle 'bling/vim-airline'
 
 filetype plugin indent on
 
