@@ -1,7 +1,15 @@
 version 7.0
 
-set runtimepath+=$HOME/.vim/vundle
+" Use Vim settings, rather then Vi settings (much better!).
+" This must be first, because it changes other options as a side effect.
+set nocompatible
+filetype off
+
+set runtimepath+=$HOME/.vim/bundle/vundle
 call vundle#rc()
+
+" Vundle requirement
+Bundle 'gmarik/vundle'
 
 Bundle 'fugitive.vim'
 Bundle 'L9'
@@ -11,13 +19,12 @@ Bundle 'simplefold'
 Bundle 'taglist.vim'
 Bundle 'tComment'
 
+filetype plugin indent on
+
 "set tags=./tags,tags,/home/website/tags
 set tags=tags;/
 command! Ctags !cd /home/git && ctags -R
 
-" Use Vim settings, rather then Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
