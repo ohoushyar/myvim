@@ -25,7 +25,7 @@ Bundle 'The-NERD-tree'
 filetype plugin indent on
 
 "set tags=./tags,tags,/home/website/tags
-set tags=tags;/
+set tags=tags;
 command! Ctags !cd /home/git && ctags -R
 
 
