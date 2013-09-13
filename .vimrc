@@ -19,6 +19,7 @@ Bundle 'taglist.vim'
 Bundle 'tComment'
 Bundle 'fugitive.vim'
 Bundle 'The-NERD-tree'
+Bundle 'Tabular'
 "Doesn't really work with Fugitive. Disable for now!
 "Bundle 'bling/vim-airline'
 
