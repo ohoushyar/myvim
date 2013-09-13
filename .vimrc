@@ -46,7 +46,6 @@ set showcmd
 set incsearch
 set vb
 set scrolloff=5
-"set cursorline
 set statusline=%F%m%r%h%w\ [%{&ff}]\ %y\ [CHR=%b/0x%B]\ [POS=%04l,%03c(%03v)]\ [%p%%]\ [LEN=%L]\ %{fugitive#statusline()}
 set laststatus=2
 
@@ -62,13 +61,15 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   colorscheme darkblue
   set hlsearch
-"  set cursorline
+  set cursorline
+  hi CursorLine term=NONE cterm=bold
+  set cursorcolumn
 endif
 
 " Fix number of colors for xterm
 if &term =~ "xterm" && &t_Co == 8
   set t_Co=16
-"  hi CursorLine term=NONE cterm=bold ctermbg=8
+  hi CursorLine term=NONE cterm=bold ctermbg=8
   hi Folded ctermbg=8 ctermfg=14
   hi FoldColumn ctermbg=8 ctermfg=14
   hi Visual term=NONE cterm=bold ctermbg=10 ctermfg=8
