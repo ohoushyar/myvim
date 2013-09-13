@@ -62,7 +62,8 @@ if &t_Co > 2 || has("gui_running")
   colorscheme darkblue
   set hlsearch
   set cursorline
-  hi CursorLine term=NONE cterm=bold
+  set t_Co=16
+  hi CursorLine term=bold cterm=bold ctermbg=darkgrey
   set cursorcolumn
 endif
 
