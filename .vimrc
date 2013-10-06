@@ -176,28 +176,6 @@ function! ToggleMouse()
     endif
 endfunction
 
-map<Leader>n :call ToggleNumber()<CR>
-function! ToggleNumber()
-    if &number
-        set nonumber
-        echo "Number is disabled"
-    else
-        set number
-        echo "Number is enabled"
-    endif
-endfunction
-
-map <Leader>l :call ToggleList()<CR>
-function! ToggleList()
-    if &list
-        set nolist
-        echo "List is disabled"
-    else
-        set list
-        echo "List is enabled"
-    endif
-endfunction
-
 let g:gitgrepprg="git\\ grep\\ -n"
 function! GitGrep(args)
     let grepprg_bak=&grepprg
@@ -210,6 +188,9 @@ endfunction
 command! -nargs=* -complete=file GitGrep call GitGrep(<q-args>)
 map <Leader>gg :GitGrep <C-r><C-w>
 
+map <Leader>n :set number!<CR>
+map <Leader>l :set list!<CR>
+
 map <Leader>t :FufBuffer<CR>
 map <C-t> :FufCoverageFile<CR>
 
@@ -220,6 +201,12 @@ map <Leader>gl :Git log<CR>
 map <Leader>gb :Gblame<CR>
 map <Leader>gdd :Git diff<CR>
 map <Leader>gdf :Gdiff<CR>
+
+map <Leader>tr :NERDTreeToggle<CR>
+
+" Tabularize json
+map <Leader>ij :Tabularize /:\z\s/<CR>
+
 map <Leader>r :!perl %<CR>
 map <Leader>rd :!perl -d %<CR>
 map <Leader>prv :!prove -v %<CR>
