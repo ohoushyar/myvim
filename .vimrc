@@ -233,6 +233,8 @@ map <Leader>oms 0f<Space>eT<Space>vt<Space><Leader>omv
 
 " save
 map <C-s> <esc>:w<CR>
+map <C-N> :bn<CR>
+map <C-P> :bp<CR>
 
 vmap ,f :! $HOME/myvim/_myplugins/perl_postfix_toggle/postfix_toggle.pl<CR>
 noremap ,t  :!prove -lv --merge -It/tests %<CR>
