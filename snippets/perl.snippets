@@ -109,3 +109,9 @@ snippet openfile
 	open my $${1:var}, "${2:mode}", "${3:file}";${4}
 snippet warn
 	warn sprintf("---[DEBUG]--- ${1:comment} [%s]", ${2:var});${3}
+snippet start
+	#!/usr/bin/env perl
+	use strict;
+	use warnings;
+	use feature qw( say ${1:switch state} );
+	${2}
