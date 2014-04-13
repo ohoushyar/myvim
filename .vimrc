@@ -104,6 +104,7 @@ set wrap
 nmap ' :cn
 nmap <F1> <Esc>
 imap <F1> <Esc>
+imap jj <Esc>
 
 
 
