@@ -1,0 +1,35 @@
+#!/bin/bash
+RUNDIR=`pwd`
+
+FILENAMES='myvim myvim/.vimrc'
+
+for name in ${FILENAMES[@]}; do
+    echo --- $name ---
+
+    src=$name
+    if [ $name == 'myvim/.vimrc' ]; then
+        name=.vimrc
+    elif [ $name == 'myvim' ]; then
+        name=.vim
+    fi
+
+    # Rename already exists file with old ext
+    dest=$HOME/$name
+    if [ -e $dest ]; then
+        ls_result=`ls -al $dest | grep "$RUNDIR/$name"`
+        if [ ! -n "$ls_result" ]; then
+            echo rename the file [$dest]
+            mv -v $HOME/$name $HOME/$name.old
+        else
+            echo ignore dest[$dest]
+            continue
+        fi
+    fi
+
+    # Create a symlink
+    ln -sv $src $dest
+done
+
+echo DONE.
+
+
