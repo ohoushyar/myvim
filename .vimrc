@@ -203,6 +203,7 @@ map <Leader>gg :GitGrep <C-r><C-w>
 
 map <Leader>n :set number!<CR>
 map <Leader>l :set list!<CR>
+map <Leader>s :set spell!<CR>
 
 map <Leader>t :FufBuffer<CR>
 map <C-t> :FufCoverageFile<CR>
@@ -226,6 +227,7 @@ map <Leader>prv :!prove -v %<CR>
 map <Leader>sc :!perl -c %<CR>
 map <Leader>a :Ack <C-r><C-w>
 map <Leader>rp :%s/<C-r>0//gc
+map <Leader>t :!perltidy<CR>
 
 " Perl module opener
 map <Leader>omv y<C-w>np0ie lib/<esc>A.pm<esc>:%s/::/\//g<CR>:noh<CR>v$y:bd!<CR>:<C-r>0<CR>
