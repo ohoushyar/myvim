@@ -221,6 +221,9 @@ map <Leader>tr :NERDTreeToggle<CR>
 " Tabularize json
 map <Leader>ij :Tabularize /:\z\s/<CR>
 
+" Get rid of trailing
+map <Leader>tr :%s/\s* $//gc<CR>
+
 map <Leader>r :!perl %<CR>
 map <Leader>rd :!perl -d %<CR>
 map <Leader>prv :!prove -v %<CR>
