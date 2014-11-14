@@ -73,16 +73,17 @@ if &t_Co > 2 || has("gui_running")
   syntax on
   colorscheme darkblue
   set hlsearch
-  set cursorline
+  " set cursorline
   set t_Co=16
-  hi CursorLine term=bold cterm=bold ctermbg=darkgrey
-  set cursorcolumn
+  " hi CursorLine term=bold cterm=bold ctermbg=darkgrey
+  " set cursorcolumn
 endif
 
 " Fix number of colors for xterm
 if &term =~ "xterm" && &t_Co == 8
   set t_Co=16
-  hi CursorLine term=NONE cterm=bold ctermbg=8
+
+  " hi CursorLine term=NONE cterm=bold ctermbg=8
   hi Folded ctermbg=8 ctermfg=14
   hi FoldColumn ctermbg=8 ctermfg=14
   hi Visual term=NONE cterm=bold ctermbg=10 ctermfg=8
