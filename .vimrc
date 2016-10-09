@@ -20,6 +20,7 @@ Bundle 'tComment'
 Bundle 'fugitive.vim'
 Bundle 'The-NERD-tree'
 Bundle 'Tabular'
+Bundle 'fatih/vim-go'
 
 filetype plugin indent on
 
