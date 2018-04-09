@@ -55,10 +55,10 @@ let perl_include_pod=1
 let g:omni_sql_no_default_maps=1
 
 " vim-go settings
-let g:go_fmt_autosave = 0 
+" let g:go_fmt_autosave = 0 
 " vim-go mappings
 " au FileType go nmap <leader>r <Plug>(go-run)
-autocmd BufNewFile,BufRead *.go setlocal expandtab tabstop=4 shiftwidth=4
+" autocmd BufNewFile,BufRead *.go setlocal expandtab tabstop=4 shiftwidth=4
 
 
 " airline-powerline
@@ -171,6 +171,8 @@ set shiftround   "Always indent.outdent to the nearest tabstop"
 
 set list                        "enable viewing tabs
 set listchars=tab:>-,trail:-    "make it nicer
+
+set path+=.,./lib,./t/lib
 
 " set textwidth=80 "Use 80 column lines
 

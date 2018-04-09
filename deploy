@@ -30,6 +30,6 @@ for name in ${FILENAMES[@]}; do
     ln -sv $src $dest
 done
 
-echo DONE.
+echo DONE
 
 

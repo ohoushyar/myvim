@@ -137,3 +137,30 @@ snippet pod
 	Omid Houshyar <${5:email}>
 
 	=cut
+snippet podsub
+	=${1:head} ${2:subname}
+
+	=cut
+
+	${3}
+snippet method
+	sub ${1:method} {
+		my $self = shift;
+		${2:#body}
+	}
+snippet mmethod
+	sub ${1:method} {
+		my ($self, ${2:#args}) = @_;
+		${3:#body}
+	}
+snippet self
+	my $${1:#self} = shift;
+snippet selfargs
+	my ($self, ${1:#args}) = @_;
+snippet cb
+	{
+		on_succ => sub {${1:#on_succ}},
+		on_err  => sub {${2:#on_err}},
+	}${3}
+snippet br
+	$DB::single=1;${1}
